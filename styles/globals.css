@@ -42,6 +42,10 @@ ol {
   list-style: none;
 }
 
+img {
+  border-style: none;
+}
+
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
