@@ -81,7 +81,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3.05rem;
+  gap: 3.375rem;
 }
 
 .section__title {
@@ -94,7 +94,9 @@
 
 .section__image-container {
   position: relative;
-  height: var(--image-height);
+  border: var(--outline);
+  max-height: 100%;
+  height: auto;
 }
 
 .section__image {
@@ -102,7 +104,9 @@
   width: 100%;
   object-fit: cover;
   object-position: top left;
-  outline: var(--outline);
+  vertical-align: top;
+  max-height: 100%;
+  height: auto;
 }
 
 .section__image_memory {
@@ -148,6 +152,7 @@
 @supports (-webkit-text-stroke: 1px #ffffff) {
   .section__lable {
     -webkit-text-stroke: 1px #ffffff;
+    text-shadow: none;
   }
 }
 
@@ -162,7 +167,7 @@
 }
 
 .section__text_proposal {
-  padding: 0.1rem 1.6rem 1.68rem;
+  padding: 0.1rem 1.6rem 1.4375rem;
 }
 
 .section__text_container {
@@ -179,10 +184,10 @@
 
 .section__button-container {
   display: flex;
-  padding: 0rem 1.563rem 1.7rem;
+  padding: 0rem 1.65rem 1.359rem;
   align-items: center;
   justify-content: end;
-  column-gap: 0.625rem;
+  column-gap: 0.4rem;
 }
 
 .card__icon-button {
@@ -194,6 +199,7 @@
   background: transparent;
   outline: 0.125rem solid transparent;
   height: 2.375rem;
+  width: 2.375rem;
   cursor: pointer;
 }
 
@@ -202,11 +208,13 @@
 }
 
 .card__icon-button:focus-visible {
+  transition: outline 0.3s ease-in-out;
   outline: var(--outline);
 }
 
 .like-icon .contour {
   fill: var(--heart-color);
+  margin: auto;
   transition-timing-function: linear;
   transition-duration: 0.1s;
   transition-property: fill;
@@ -312,7 +320,7 @@
   animation-timing-function: ease-in;
 }
 
-.main-button {
+.button {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -320,6 +328,9 @@
   align-items: center;
   gap: 0.563rem;
   background: transparent;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   border: none;
   outline: var(--outline);
   overflow: hidden;
@@ -331,21 +342,16 @@
   transition-property: box-shadow;
 }
 
-.main-button:focus-visible {
+.button:focus-visible {
   box-shadow: var(--box-shadow);
 }
 
-.card__like-button {
-  width: 8.1rem;
-  height: 2.2rem;
-}
-
-.main-button:hover {
+.button:hover {
   position: relative;
   color: #ffffff;
 }
 
-.main-button::after {
+.button::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -359,13 +365,18 @@
   height: 100%;
 }
 
-.main-button:hover::after {
+.button:hover::after {
   transform: translateX(0);
+}
+
+.card__like-button {
+  width: 8.1rem;
+  height: 2.2rem;
 }
 
 .button__text {
   position: relative;
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), sans-serif;
   font-size: var(--font-size-card-lable);
   line-height: var(--line-height-card-lable);
   z-index: 2;
@@ -373,26 +384,24 @@
   color: var(--color-text-button);
 }
 
-.footer {
+.main__button {
   display: flex;
   justify-content: center;
-  margin-block-start: 3.25rem;
-  margin-block-end: 6.25rem;
-  width: var(--width-footer);
-  height: 3.4375rem;
+  margin-block-start: 0.1rem;
+  width: var(--width-main-button);
   background-color: var(--background);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
 }
 
-.footer__container {
+.button__container {
   width: 100%;
 }
 
-.footer__button {
+.save-button {
   display: flex;
-  padding: 1.1rem;
+  padding: 1.0628rem;
   flex-direction: row;
 }
 
@@ -408,11 +417,13 @@
 }
 
 .dialog {
+  margin: 0;
+  transform: translateX(-50%) translateY(205%);
+  left: 50%;
   width: var(--width-dialog);
   background-color: var(--background);
   border: var(--outline);
   padding: 1.78rem;
-  margin: auto;
   color: currentColor;
 }
 
@@ -431,7 +442,7 @@
 }
 
 .dialog__text {
-  font-family: var(--font-family-accent);
+  font-family: var(--font-family-accent), sans-serif;
   color: currentColor;
   font-size: var(--font-size-card-lable);
   line-height: var(--line-height-card-text);
@@ -466,16 +477,7 @@
     padding: 0.5rem 0.625rem 0.1875rem 0.75rem;
   }
 
-  .section__image-container {
-    height: 23.438rem;
-  }
-
-  .section__image {
-    height: 100%;
-  }
-
   .section__lable {
-    position: absolute;
     top: 1.5625rem;
     right: 0.8125rem;
   }
@@ -492,20 +494,29 @@
     padding: 0rem 1.6875rem 1.5625rem;
   }
 
-  .footer {
+  .main__button {
     height: 5.25rem;
   }
 
-  .footer__button {
+  .button__container {
     display: flex;
-    padding: 0.9rem;
     flex-direction: column;
   }
+
+  .save-button {
+    display: flex;
+    padding: 1.0628rem;
+    flex-direction: column;
+}
 
   .disk-icon {
     min-width: 1.75rem;
     min-height: 1.75rem;
     max-width: 1.75rem;
     max-height: 1.75rem;
+  }
+
+  .dialog {
+    transform: translateX(-50%) translateY(127%);
   }
 }
