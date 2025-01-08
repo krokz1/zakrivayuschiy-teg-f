@@ -515,6 +515,7 @@
   }
 
   .dialog {
-    margin-block-start: 14.875rem;
+    margin-block-start: 15.1rem;
+    padding: 1.875rem;
   }
 }
