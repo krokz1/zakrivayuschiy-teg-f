@@ -457,10 +457,6 @@
   padding: 0.75rem 8.282rem;
 }
 
-.dialog__form {
-  
-}
-
 .dialog__disk-icon.disk-icon {
   min-width: 2.4375rem;
   min-height: 2.4375rem;
@@ -532,6 +528,12 @@
     max-height: 1.75rem;
   }
 
+  .dialog {
+    padding: 1rem;
+  }
+}
+
+@media (width<=1380px) {
   .dialog__wrapper {
     padding: 0px 0.625rem;
   }
