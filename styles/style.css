@@ -369,7 +369,7 @@
 }
 
 .card__like-button {
-  width: 8.1rem;
+  width: 8.125rem;
   height: 2.2rem;
 }
 
@@ -417,11 +417,10 @@
 }
 
 .dialog {
-  margin-block-start: 24.0313rem;
   width: var(--width-dialog);
   background-color: var(--background);
   border: var(--outline);
-  padding: 1.78rem;
+  padding: 1.775rem;
   color: currentColor;
 }
 
@@ -437,6 +436,7 @@
   display: flex;
   align-items: center;
   column-gap: 1.25rem;
+  min-width: 18.3125rem;
 }
 
 .dialog__text {
@@ -449,7 +449,11 @@
 
 .dialog__button {
   margin-top: 1.875rem;
-  padding: 0.65rem 0rem;
+  padding: 0.75rem 0rem;
+}
+
+.dialog__form {
+  min-width: 18.125rem;
 }
 
 .dialog__disk-icon.disk-icon {
@@ -460,11 +464,11 @@
 
 @media (width <= 376px) {
   .header {
-    margin-block: 6.3rem;
+    margin-block: 6.44rem;
   }
 
   .main {
-    gap: 3.125rem;
+    gap: 3.3rem;
   }
 
   .conteiner-widtch {
@@ -472,16 +476,25 @@
   }
 
   .section__title {
-    padding: 0.5rem 0.625rem 0.1875rem 0.75rem;
+    padding: 0.3rem 0.625rem 0.15rem;
+  }
+
+  .title-padding {
+    padding-bottom: 0.3125rem;
+  }
+
+  .title-size {
+    padding-bottom: 0.3125rem;
+    padding-top: 0.25rem;
   }
 
   .section__lable {
-    top: 1.5625rem;
+    top: 1.46rem;
     right: 0.8125rem;
   }
 
   .section__text_proposal {
-    padding: 0.07rem 1.7rem 1.6rem;
+    padding: 0rem 1.7rem 1.6rem;
   }
 
   .section__text_container-beginning {
@@ -493,7 +506,7 @@
   }
 
   .main__button {
-    height: 5.25rem;
+    min-height: 5.25rem;
   }
 
   .button__container {
@@ -503,7 +516,7 @@
 
   .save-button {
     display: flex;
-    padding: 1.0628rem;
+    padding: 1.0628rem 1.0628rem 0.8rem 1.0628rem;
     flex-direction: column;
 }
 
@@ -515,7 +528,16 @@
   }
 
   .dialog {
-    margin-block-start: 15.1rem;
-    padding: 1.875rem;
+    padding: 1.775rem 1.875rem;
+    min-width: 21.3125rem;
   }
+
+  .dialog__wrapper {
+    margin: 0px 0.5313rem;
+  }
+
+  .dialog__form {
+    margin: 0px 0.5313rem;
+  }
+
 }
