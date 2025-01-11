@@ -389,10 +389,6 @@
   justify-content: center;
   margin-block-start: 0.1rem;
   width: var(--width-main-button);
-  background-color: var(--background);
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
 }
 
 .button__container {
@@ -403,6 +399,10 @@
   display: flex;
   padding: 1.0628rem;
   flex-direction: row;
+  background-color: var(--background);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
 
 .disk-icon {
@@ -417,6 +417,11 @@
 }
 
 .dialog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1.875rem;
   width: var(--width-dialog);
   background-color: var(--background);
   border: var(--outline);
@@ -429,14 +434,15 @@
 }
 
 .dialog:not([open]) {
-  display: none;
+  display:none;
+
 }
 
 .dialog__wrapper {
   display: flex;
   align-items: center;
   column-gap: 1.25rem;
-  min-width: 18.3125rem;
+  
 }
 
 .dialog__text {
@@ -448,12 +454,11 @@
 }
 
 .dialog__button {
-  margin-top: 1.875rem;
-  padding: 0.75rem 0rem;
+  padding: 0.75rem 8.282rem;
 }
 
 .dialog__form {
-  min-width: 18.125rem;
+  
 }
 
 .dialog__disk-icon.disk-icon {
@@ -527,17 +532,11 @@
     max-height: 1.75rem;
   }
 
-  .dialog {
-    padding: 1.775rem 1.875rem;
-    min-width: 21.3125rem;
-  }
-
   .dialog__wrapper {
-    margin: 0px 0.5313rem;
+    padding: 0px 0.625rem;
   }
 
-  .dialog__form {
-    margin: 0px 0.5313rem;
-  }
-
+  .dialog__button {
+    padding: 0.75rem 7.1565rem;
+}
 }
