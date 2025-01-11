@@ -435,7 +435,6 @@
 
 .dialog:not([open]) {
   display:none;
-
 }
 
 .dialog__wrapper {
@@ -461,6 +460,16 @@
   min-width: 2.4375rem;
   min-height: 2.4375rem;
   max-width: 2.4375rem;
+}
+
+@media (width<=1380px) {
+  .dialog__wrapper {
+    padding: 0px .1.875rem;
+  }
+
+  .dialog__button {
+    padding: 0.75rem 7.9rem;
+}
 }
 
 @media (width <= 376px) {
@@ -527,13 +536,7 @@
     max-width: 1.75rem;
     max-height: 1.75rem;
   }
-
-  .dialog {
-    padding: 1rem;
-  }
-}
-
-@media (width<=1380px) {
+  
   .dialog__wrapper {
     padding: 0px 0.625rem;
   }
@@ -542,3 +545,5 @@
     padding: 0.75rem 7.1565rem;
 }
 }
+
+
